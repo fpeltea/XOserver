@@ -3,9 +3,6 @@ const redis = require('redis');
 const asyncRedis = require('async-redis');
 const uuidv4 = require('uuid/v4');
 
-const path = require('path');
-const INDEX = path.join(__dirname, 'index.html');
-
 
 var PORT = process.env.PORT || 3000;
 
