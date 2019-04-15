@@ -7,17 +7,13 @@ const path = require('path');
 const INDEX = path.join(__dirname, 'index.html');
 
 
-var PORT = process.env.PORT;
+var PORT = process.env.PORT || 3000;
 
-const server = express()
-    .use((req, res) => res.sendFile(INDEX))
-    .listen(PORT, () => console.log(`Listening on ${PORT}`));
-
-var client = asyncRedis.createClient(process.env.REDIS_URL);
+var client = asyncRedis.createClient();
 
 client.flushall();
 
-const wss = new WebSocket.Server(server);
+const wss = new WebSocket.Server({ port: PORT });
 
 console.log("Server started");
 
