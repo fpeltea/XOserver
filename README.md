@@ -1,2 +1,2 @@
 # XOserver
-Websocket server for tic tac toe game, requires a Redis server
+Node websocket server for tic tac toe game, requires a Redis server
